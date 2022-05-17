@@ -2,12 +2,8 @@
   <q-layout view="lHh Lpr lFf">
     <div class="bg-primary">
       <q-header bordered class="bg-secondary text-primary row justify-center">
-        <q-tabs no-caps active-color="accent" indicator-color="transparent" class="text-primary" v-model="tab">
-          <q-tab name="Controller" label="Controller" class="underline" id="Controller"/>
-          <q-tab name="Panel" label="Panel" class="underline" id="Panel"/>
-          <q-tab name="Programs" label="Programs" class="underline" id="Programs"/>
-        </q-tabs>
-        <div class="text-primary absolute-right" style="top:5px; right: 5px">
+
+        <!-- <div class="text-primary absolute-right" style="top:5px; right: 5px">
         <q-btn-toggle
           v-model="model"
           push
@@ -19,7 +15,7 @@
             {label: 'Light', value: 'Light'}
           ]"
         />
-      </div>
+      </div> -->
       </q-header>
       
       <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
@@ -59,10 +55,12 @@ export default {
   watch: {
     model: function(model) {
       console.log(model);
+      
       // fixa senare
     },
     tab: function(tab) {
       console.log(tab);
+      localStorage.setItem('storedTab', this.tab)
       // var element1 = document.getElementById("Controller");
       // var element2 = document.getElementById("Panel");
       // var element3 = document.getElementById("Programs");
